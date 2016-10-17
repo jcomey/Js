@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>计时平台精简版后台</title>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<link rel="stylesheet" type="text/css" href="css/global.css">
+		<script type="text/javascript" src="jquery-easyui-1.5/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.5/jquery.easyui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5/themes/bootstrap/easyui.css">
+		<style type="text/css">
+		
+		body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:"Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti,"Microsoft YaHei";}
+		.topBar{background:#09c;}
+		.top-nav{height:50px;overflow:hidden;background:#09c;line-height:50px;cursor: pointer}
+		.tools-bar{position: absolute;right:0;top:0;}
+		.link{display:inline-block;line-height:50px;height:50px;color:#fff;font-size: 14px;text-decoration:none;transition: all 0.12s ease 0s, all 0.12s ease 0s;}
+		.logo-link{display:inline-block;line-height:50px;height:50px;float:left;}
+		.home-link{border-left:1px solid #008fbf;border-right:1px solid #008fbf;padding:0 21px; }
+		.fun-link{font-size:14px; padding:0 20px; }
+		.logout{padding: 0 10px;}
+		.link:hover{background:#008fbf;transition: all 0.12s ease 0s, all 0.12s ease 0s;}
+		.arrow-icon{vertical-align: middle;transition: all 0.12s ease 0s, all 0.12s ease 0s;}
+		.fun-link:hover span .arrow-icon{   transform: rotate(180deg);transition: all 0.12s ease 0s, all 0.12s ease 0s;}
+		#left-pnl{max-width: 360px; background: #eaedf1;border:none;}
+		.left-body{background:#293038;width:180px;overflow:hidden;height:100%;}
+		.left{background:#293038;height:100%;width:200px;overflow-x:hidden;overflow-y:auto;}
+		.clpsmenu{background:#eaedf1}
+		.sub-menu{display:inline-block;position:absolute;background:#eaedf1;width:180px;height:100%;top:0;right:0;}
+		.li{list-style:none outside none;color:#454545;margin:0;line-height:40px;text-align:left;position:relative;font-size:12px;padding-left:40px;}
+		.li:hover{background:#f4f6f8;cursor:pointer;}
+		.li-action{background:#fff;}
+		.li a{font-size:12px;}
+		.menu-li{height:40px;line-height:40px;padding-left:15px;}
+		.menu-li img{vertical-align:middle;margin-right:15px;}
+		.menu-li:hover{background:#37424f;cursor:pointer;}
+		.side-a{color:#fff;font-size:14px;}
+		.menuTitle{font-weight:bolder;font-size:14px;color:#333;}
+		.liact{background:#d4e8e0;background:#c4dbff;font-size:14px;}
+		.sub-menu-Title{background:#d9dee4 none repeat scroll 0 0;height:70px;line-height:70px;text-indent:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:180px;}
+		#center-pnl{background:#fff;padding:0 0px;border:none;}
+		.footer{background:#f4f4f4;position:fixed;left:0;width:100%;height:26px;line-height:26px;bottom:0;border-top:1px solid #d8d8d8;font-size:14px;}
+		.menu-expand{
+		-moz-user-select: none;
+		background: #394555 none repeat scroll 0 0;
+		color: #aeb9c2;
+		cursor: pointer;
+		font-size: 12px;
+		height: 30px;
+		line-height: 30px !important;
+		text-align: center;
+		width: 180px;
+		}
+		.closes{width: 50px;}
+		.pnl-close{width: 230px;}
+		.sub-menu{background: #eaedf1;border:none;}
+		.fun-panel{position: absolute;top:50px;left:164px;background: #fff;  width:75%;height: 50%;color:#000;z-index: 999; display: none;padding: 10px;    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);}
+		.hover-box{ background: #fff;color: #000;}
+				.hover-box:hover{background: #fff;}
+		.icon-down{overflow: hidden; width: 17px;height:6px; display: inline-block;background: url('img/manger/arrow.png') center 6px;transition: all 0.12s ease 0s, all 0.12s ease 0s;margin-left: 5px;}
+		.hover-box .icon-down{background-position: center 0px;transition: all 0.12s ease 0s, all 0.12s ease 0s;}
+		.collapse-btn{ position: absolute;top: 50%;right: 0; }
+		.w0{width: 0}
+		.item{text-decoration: none;}
+		.item-title{font-size: 14px;color: #666;padding: 5px;}
+		.short-li{padding: 0 10px;margin: 6px 0;}
+		.short-li:hover{background: #f2f2f2;}
+		.item-icon{vertical-align: middle;margin-right: 5px;}
+		.item-name{font-size:12px;color:#333;}
+		.item-total{max-width: 160px;}
+		</style>
+	</head>
+	<body>
+		<div class="fun-panel">
+
+<div class="menu-box">
+		<h3 class="item-title">学员管理</h3>
+		<ul class="item-total">
+			
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/card.png" width="16" /></span><span class="item-name">学员卡发卡</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/fixedcard.png" width="16" /></span><span class="item-name">学员卡校验</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/offcard.png" width="16" /></span><span class="item-name">学员卡注销</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coachcard.png" width="16" /></span><span class="item-name">教练卡发卡</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coach-card.png" width="16" /></span><span class="item-name">教练卡校验</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/logoff.png" width="16" /></span><span class="item-name">教练卡注销</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡发卡</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡签退</span></a></li>
+			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/othercard.png" width="16" /></span><span class="item-name">特殊卡发卡</span></a></li>
+		 
+
+
+		</ul>
+
+</div>
+
+
+		</div>
+		<body class="easyui-layout">
+			
+			<div data-options="region:'north',border:false"  class="top-nav">
+				<div><a class="logo-link"><img src="img/manger/logo.png" width="50" height="50" alt="军博软件"/></a><a class="link home-link" href="javascript:;">管理控制台</a><a class="link fun-link">业务与功能<span class="icon-down"></span>
+			</a>
+		</div>
+		<div class="tools-bar"><a href="" class="link logout ">Administrator</a></div>
+	</div>
+	<div   data-options="region:'west',border:false" id="left-pnl">
+		
+		<div class="left-body">
+			
+			<div class="left">
+				<div class="menu-expand"><img src="img/manger/slice.png" width="14" id="toggle-btn" style="vertical-align: middle;"></div>
+				<ul class="leftMenu">
+					<li class="menu-li">
+						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/user.png" width="20"><span>学员管理</span> </a>
+					</li>
+					
+					<li class="menu-li" >
+						<a class="side-a"><img src="img/manger/exam.png" width="20"><span>考试管理</span></a>
+					</li>
+					<li class="menu-li" >
+						<a class="side-a"><img src="img/manger/coach.png" width="20"><span>教练管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/car.png" width="20"><span>车辆管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/income.png" width="20"><span>财务管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/info.png" width="20"><span>基础资料</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/set.png" width="20"><span>系统设置</span></a>
+					</li>
+				</ul>
+				<ul class="leftMenu">
+					<li class="menu-li">
+						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/user.png" width="20"><span>学员管理</span> </a>
+					</li>
+					
+					<li class="menu-li" >
+						<a class="side-a"><img src="img/manger/exam.png" width="20"><span>考试管理</span></a>
+					</li>
+					<li class="menu-li" >
+						<a class="side-a"><img src="img/manger/coach.png" width="20"><span>教练管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/car.png" width="20"><span>车辆管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/income.png" width="20"><span>财务管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/info.png" width="20"><span>基础资料</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/set.png" width="20"><span>系统设置</span></a>
+					</li>
+				</ul>
+				<ul class="leftMenu">
+					<li class="menu-li">
+						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/user.png" width="20"><span>学员管理</span> </a>
+					</li>
+					
+					<li class="menu-li" >
+						<a class="side-a"><img src="img/manger/exam.png" width="20"><span>考试管理</span></a>
+					</li>
+					<li class="menu-li" >
+						<a class="side-a"><img src="img/manger/coach.png" width="20"><span>教练管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/car.png" width="20"><span>车辆管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/income.png" width="20"><span>财务管理</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/info.png" width="20"><span>基础资料</span></a>
+					</li>
+					<li class="menu-li">
+						<a class="side-a"><img src="img/manger/set.png" width="20"><span>系统设置</span></a>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+		
+		
+		<div  class="sub-menu"  data-options="border:false">
+			
+			<div class="sub-menu-Title"><h1 class="menuTitle">学员管理</h1></div>
+			
+			<ul class="clpsmenu">
+				<li class="li li-action">
+					IC卡管理
+				</li>
+				<li class="li">
+					IC卡登记
+				</li>
+				<li class="li">
+					IC卡注销
+				</li>
+				<li class="li">
+					IC卡删除
+				</li>
+				<li class="li">
+					遗留问题
+				</li>
+			</ul>
+			
+		</div>
+		
+		
+	</div>
+
+
+
+	<!-- <div data-options="region:'east',split:true,collapsed:true,title:'East'" style="width:100px;padding:10px;">east region</div>
+	
+<div data-options="region:'south',border:false" style="height:20px;background:#A9FACD; ">
+<div class="footer">
+当前用户：
+<span>administratror</span>
+当前角色：
+<span>管理员</span>
+</div>
+	</div>-->
+
+
+
+	<div id="center-pnl" data-options="region:'center',title:''" >
+		
+		<table class="easyui-datagrid" title="学员档案"
+			data-options="border:false,singleSelect:true,collapsible:true,fit:true,url:'jquery-easyui-1.5/demo/datagrid/datagrid_data1.json',method:'get'">
+			<thead>
+				<tr>
+					<th data-options="field:'itemid',width:80,align:'center'">学员姓名</th>
+					<th data-options="field:'productid',width:160,align:'center'">证件类型</th>
+					<th data-options="field:'listprice',width:120,align:'center'">身份证</th>
+					<th data-options="field:'unitcost',width:80,align:'center'">Unit Cost</th>
+					<th data-options="field:'attr1',width:250,align:'center'">Attribute</th>
+					<th data-options="field:'status',width:60,align:'center'">Status</th>
+				</tr>
+			</thead>
+		</table>
+		
+		
+	</div>
+
+
+	<script type="text/javascript">
+	$(function(){
+	// $.ajax({
+	//       url:"http://op.juhe.cn/onebox/weather/query?cityname=%E5%AE%89%E9%98%B3&dtype=&key=0479f84ce021cf657e76e6185adb06c1",
+	//       type:'GET',
+	//       dataType:'JSONP',  // 处理Ajax跨域问题
+	//       success: function(data){
+	//       	var json=data;
+	//       }
+	//   });
+	var leftWidth=360;
+	var collapseWidth=230;
+	var bodyWidth=$('body').width();
+	$('.menu-expand').click(function(event) {
+	/* Act on the event */
+	$(this).toggleClass('closes');
+	if($(this).hasClass('closes'))
+	{
+	$('#left-pnl').panel('resize',{
+	width:collapseWidth
+	});
+	$('#center-pnl').panel('resize',{width:bodyWidth-collapseWidth,left:collapseWidth});
+	$('.side-a span').hide();
+	$('.side-a').tooltip({
+	position: 'right',
+	content: function(menutxt){
+	var menutxt=$(this).find('span').text();
+	return menutxt;
+	console.log(menutxt)
+	},
+	onShow: function(){
+	$(this).tooltip('tip').css({
+	backgroundColor: '#293038',
+	borderColor: '#393038',
+	color:'#fff'
+	});
+	}
+	});
+	}
+	else{
+	$('.side-a span').show();
+			$('#left-pnl').panel('resize',{	width:leftWidth});
+	$('#center-pnl').panel('resize',{width:bodyWidth-leftWidth,left:leftWidth});
+	$('.side-a').tooltip('destroy');
+	}
+	});
+	$(document).on("click", function(){
+	$('.fun-link').removeClass('hover-box');
+	$('.fun-panel').hide();
+	});
+	$('.fun-link').click(function(event) {
+	$(this).toggleClass('hover-box');
+	$('.fun-panel').toggle();
+	event.stopPropagation();
+	});
+	$('.fun-panel').click(function(event) {
+	event.stopPropagation();
+	});
+	})
+	</script>
+</body>
+</html>
