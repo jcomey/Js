@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>phone</title>
+	</head>
+	<body>
+		<p><span style="font-size:14px;">1.活动日期：8月21日-8月31日；</span></p> <p><span style="font-size:14px">2.为了方便兑奖请填写真实姓名和手机号码</span></p> <p><span style="font-size:14px">3.抽中0元学车请携带您的身份证到驾校办理入学</span></p> <p><span style="font-size:14px;">4.参与摇一摇可有机会获得特等奖：“0元学车”（限本人学车C1）;如果要报大车(A2、B2)，可抵2480学费</span> </p> <p><span style="font-size:14px;">5.奖品设置：一等奖：学车优惠券</span><span style="font-size:14px;">300元，二等奖：学车优惠券200元；三等奖：学车优惠券100元；</span></p> <p><span style="font-size:14px;">6.若抽中者报名A2、B2大车优惠券金额翻倍，如100元可抵扣200元；</span></p> <p><span style="font-size:14px;">5.驾校地址：</span><span style="font-size:14px;">邓襄路与南二环交叉口向北50米路西；</span></p> <p><span style="font-size:14px;"><span style="font-size:14px;">7.服务热线：</span></span><a href="tel:0377-62359888" style="font-size:14px;">0377-62359888；</a></p><p><span><span style="font-size:14px;">8.最终解释权归邓州市穰城驾校所有；</p>
+ 
+	 <script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+
+
+
+
+ 
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+
+
+
+
+		 
+				var url = 'https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=';
+				var data=["13869791636","13655302546","18637209457"];
+			
+ 
+
+
+		 	for (var i = 0; i <data.length; i++) {
+		 	 
+		
+
+			$.ajax({
+				
+					url: url,
+					type: 'GET',
+					dataType:'JSONP',
+				 	data:data[i],
+				 	async:false,
+					 
+					success: function(datas) {
+				
+							 
+
+							console.log(datas);
+							  // document.write("<div>"+datas.telString+":"+datas.carrier+"</div>");
+						
+						 
+							 
+						}
+		
+		
+					})
+		  	};
+			
+		})
+		</script>
+	</body>
+</html>

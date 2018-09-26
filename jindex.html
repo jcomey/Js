@@ -33,7 +33,7 @@
 		.li a{font-size:12px;}
 		.menu-li{height:40px;line-height:40px;padding-left:15px;}
 		.menu-li img{vertical-align:middle;margin-right:15px;}
-		.menu-li:hover{background:#37424f;cursor:pointer;}
+		.menu-li:hover,.action{background:#37424f;cursor:pointer;}
 		.side-a{color:#fff;font-size:14px;}
 		.menuTitle{font-weight:bolder;font-size:14px;color:#333;}
 		.liact{background:#d4e8e0;background:#c4dbff;font-size:14px;}
@@ -54,7 +54,7 @@
 		.closes{width: 50px;}
 		.pnl-close{width: 230px;}
 		.sub-menu{background: #eaedf1;border:none;}
-		.fun-panel{position: absolute;top:50px;left:164px;background: #fff;  width:75%;height: 50%;color:#000;z-index: 999; display: none;padding: 10px; overflow-y: auto;     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);}
+		.fun-panel{position: absolute;top:50px;left:164px;background: #fff;  width:75%;height: 65%;color:#000;z-index: 999; display: none;padding: 10px; overflow-y: auto;     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);columns:3;}
 		.hover-box{ background: #fff;color: #000;}
 				.hover-box:hover{background: #fff;}
 		.icon-down{overflow: hidden; width: 17px;height:6px; display: inline-block;background: url('img/manger/arrow.png') center 6px;transition: all 0.12s ease 0s, all 0.12s ease 0s;margin-left: 5px;}
@@ -63,61 +63,67 @@
 		.w0{width: 0}
 		.item{text-decoration: none;}
 		.item-title{font-size: 14px;color: #666;padding: 5px;}
-		.short-li{padding: 0 10px;margin: 6px 0; }
+		.short-li{padding: 0 10px;margin: 6px 0;min-width: 160px;}
 		.short-li:hover{background: #f2f2f2;  transition: all 0.12s ease 0s, all 0.12s ease 0s;}
 		.item-icon{vertical-align: middle;margin-right: 5px;}
 		.item-name{font-size:12px;color:#333;}
-		.item-total{max-width: 160px;}
-		.menu-box{float: left;margin-right: 50px;}
+		.item-total{ border-bottom: 1px solid #e5e5e5;}
+		.menu-box{display: inline-block;    margin-right:10px;}
 		</style>
 	</head>
 	<body>
 		<div class="fun-panel">
-
-<div class="menu-box">
-		<h3 class="item-title">学员管理</h3>
-		<ul class="item-total">
-			
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/card.png" width="16" /></span><span class="item-name">学员卡发卡</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/fixedcard.png" width="16" /></span><span class="item-name">学员卡校验</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/offcard.png" width="16" /></span><span class="item-name">学员卡注销</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coachcard.png" width="16" /></span><span class="item-name">教练卡发卡</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coach-card.png" width="16" /></span><span class="item-name">教练卡校验</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/logoff.png" width="16" /></span><span class="item-name">教练卡注销</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡发卡</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡签退</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/othercard.png" width="16" /></span><span class="item-name">特殊卡发卡</span></a></li>
-		 
-
-
-		</ul>
-
-</div>
-<div class="menu-box">
-		<h3 class="item-title">学员管理</h3>
-		<ul class="item-total">
-			
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/card.png" width="16" /></span><span class="item-name">学员卡发卡</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/fixedcard.png" width="16" /></span><span class="item-name">学员卡校验</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/offcard.png" width="16" /></span><span class="item-name">学员卡注销</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coachcard.png" width="16" /></span><span class="item-name">教练卡发卡</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coach-card.png" width="16" /></span><span class="item-name">教练卡校验</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/logoff.png" width="16" /></span><span class="item-name">教练卡注销</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡发卡</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡签退</span></a></li>
-			<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/othercard.png" width="16" /></span><span class="item-name">特殊卡发卡</span></a></li>
-		 
-
-
-		</ul>
-
-</div>
-
+			<div class="menu-box">
+				<h3 class="item-title">学员管理</h3>
+				<ul class="item-total">
+					
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/card.png" width="16" /></span><span class="item-name">学员卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-fixed-card.png" width="16" /></span><span class="item-name">学员卡校验</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-off-card.png" width="16" /></span><span class="item-name">学员卡注销</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-coach-card.png" width="16" /></span><span class="item-name">教练卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coach-card.png" width="16" /></span><span class="item-name">教练卡校验</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/logoff.png" width="16" /></span><span class="item-name">教练卡注销</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡签退</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/othercard.png" width="16" /></span><span class="item-name">特殊卡发卡</span></a></li>					
+				</ul>
+				<h3 class="item-title">学员管理</h3>
+				<ul class="item-total">					
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/card.png" width="16" /></span><span class="item-name">学员卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-fixed-card.png" width="16" /></span><span class="item-name">学员卡校验</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-off-card.png" width="16" /></span><span class="item-name">学员卡注销</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-coach-card.png" width="16" /></span><span class="item-name">教练卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coach-card.png" width="16" /></span><span class="item-name">教练卡校验</span></a></li>						
+				</ul>
+			</div>
+				<div class="menu-box">
+				<h3 class="item-title">学员管理</h3>
+				<ul class="item-total">
+					
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/card.png" width="16" /></span><span class="item-name">学员卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-fixed-card.png" width="16" /></span><span class="item-name">学员卡校验</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-off-card.png" width="16" /></span><span class="item-name">学员卡注销</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-coach-card.png" width="16" /></span><span class="item-name">教练卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coach-card.png" width="16" /></span><span class="item-name">教练卡校验</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/logoff.png" width="16" /></span><span class="item-name">教练卡注销</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/moneycard.png" width="16" /></span><span class="item-name">消费卡签退</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/othercard.png" width="16" /></span><span class="item-name">特殊卡发卡</span></a></li>					
+				</ul>
+				<h3 class="item-title">学员管理</h3>
+				<ul class="item-total">					
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-stu-card.png" width="16" /></span><span class="item-name">学员卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-fixed-card.png" width="16" /></span><span class="item-name">学员卡校验</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-off-card.png" width="16" /></span><span class="item-name">学员卡注销</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/icon-coach-card.png" width="16" /></span><span class="item-name">教练卡发卡</span></a></li>
+					<li class="short-li"><a href="javascript:;" class="item"><span class="item-icon"><img src="img/manger/coach-card.png" width="16" /></span><span class="item-name">教练卡校验</span></a></li>						
+				</ul>
+			</div>
 		</div>
 		<body class="easyui-layout">
 			
 			<div data-options="region:'north',border:false"  class="top-nav">
-				<div><a class="logo-link"><img src="img/manger/logo.png" width="50" height="50" alt="军博软件"/></a><a class="link home-link" href="javascript:;">管理控制台</a><a class="link fun-link">业务与功能<span class="icon-down"></span>
+				<div><a class="logo-link"><img src="img/manger/logo-new.png" width="50" height="50" alt="军博软件"/></a><a class="link home-link" href="javascript:;">管理控制台</a><a class="link fun-link">业务与功能<span class="icon-down"></span>
 			</a>
 		</div>
 		<div class="tools-bar"><a href="" class="link logout ">Administrator</a></div>
@@ -127,79 +133,56 @@
 		<div class="left-body">
 			
 			<div class="left">
-				<div class="menu-expand"><img src="img/manger/slice.png" width="14" id="toggle-btn" style="vertical-align: middle;"></div>
+				<div class="menu-expand"><img src="img/manger/icon-slice.png" width="14" id="toggle-btn" style="vertical-align: middle;"></div>
 				<ul class="leftMenu">
 					<li class="menu-li">
-						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/user.png" width="20"><span>学员管理</span> </a>
+						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/icon-user.png" width="20"><span>学员管理</span> </a>
 					</li>
 					
 					<li class="menu-li" >
-						<a class="side-a"><img src="img/manger/exam.png" width="20"><span>考试管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-exam.png" width="20"><span>考试管理</span></a>
 					</li>
 					<li class="menu-li" >
-						<a class="side-a"><img src="img/manger/coach.png" width="20"><span>教练管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-coach.png" width="20"><span>教练管理</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/car.png" width="20"><span>车辆管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-car.png" width="20"><span>车辆管理</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/income.png" width="20"><span>财务管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-income.png" width="20"><span>财务管理</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/info.png" width="20"><span>基础资料</span></a>
+						<a class="side-a"><img src="img/manger/icon-info.png" width="20"><span>基础资料</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/set.png" width="20"><span>系统设置</span></a>
+						<a class="side-a"><img src="img/manger/icon-set.png" width="20"><span>系统设置</span></a>
 					</li>
 				</ul>
 				<ul class="leftMenu">
 					<li class="menu-li">
-						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/user.png" width="20"><span>学员管理</span> </a>
+						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/icon-user.png" width="20"><span>学员管理</span> </a>
 					</li>
 					
 					<li class="menu-li" >
-						<a class="side-a"><img src="img/manger/exam.png" width="20"><span>考试管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-exam.png" width="20"><span>考试管理</span></a>
 					</li>
 					<li class="menu-li" >
-						<a class="side-a"><img src="img/manger/coach.png" width="20"><span>教练管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-coach.png" width="20"><span>教练管理</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/car.png" width="20"><span>车辆管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-car.png" width="20"><span>车辆管理</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/income.png" width="20"><span>财务管理</span></a>
+						<a class="side-a"><img src="img/manger/icon-income.png" width="20"><span>财务管理</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/info.png" width="20"><span>基础资料</span></a>
+						<a class="side-a"><img src="img/manger/icon-info.png" width="20"><span>基础资料</span></a>
 					</li>
 					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/set.png" width="20"><span>系统设置</span></a>
+						<a class="side-a"><img src="img/manger/icon-set.png" width="20"><span>系统设置</span></a>
 					</li>
 				</ul>
-				<ul class="leftMenu">
-					<li class="menu-li">
-						<a class="side-a"><img class="img" alt="学员管理" src="img/manger/user.png" width="20"><span>学员管理</span> </a>
-					</li>
-					
-					<li class="menu-li" >
-						<a class="side-a"><img src="img/manger/exam.png" width="20"><span>考试管理</span></a>
-					</li>
-					<li class="menu-li" >
-						<a class="side-a"><img src="img/manger/coach.png" width="20"><span>教练管理</span></a>
-					</li>
-					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/car.png" width="20"><span>车辆管理</span></a>
-					</li>
-					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/income.png" width="20"><span>财务管理</span></a>
-					</li>
-					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/info.png" width="20"><span>基础资料</span></a>
-					</li>
-					<li class="menu-li">
-						<a class="side-a"><img src="img/manger/set.png" width="20"><span>系统设置</span></a>
-					</li>
-				</ul>
+				 
 				
 			</div>
 		</div>
@@ -213,70 +196,51 @@
 				<li class="li li-action">
 					IC卡管理
 				</li>
-				<li class="li">
-					IC卡登记
-				</li>
-				<li class="li">
-					IC卡注销
-				</li>
-				<li class="li">
-					IC卡删除
-				</li>
-				<li class="li">
-					遗留问题
-				</li>
+				 
 			</ul>
 			
 		</div>
 		
 		
 	</div>
-
-
-
 	<!-- <div data-options="region:'east',split:true,collapsed:true,title:'East'" style="width:100px;padding:10px;">east region</div>
 	
-<div data-options="region:'south',border:false" style="height:20px;background:#A9FACD; ">
-<div class="footer">
-当前用户：
-<span>administratror</span>
-当前角色：
-<span>管理员</span>
-</div>
+	<div data-options="region:'south',border:false" style="height:20px;background:#A9FACD; ">
+		<div class="footer">
+			当前用户：
+			<span>administratror</span>
+			当前角色：
+			<span>管理员</span>
+		</div>
 	</div>-->
-
-
-
 	<div id="center-pnl" data-options="region:'center',title:''" >
+		   <div id="tabcenter" class="easyui-tabs" data-options="border:false" >
+ <div title="ss" style="padding:10px"></div>
+		  
+        </div>
 		
-		<table class="easyui-datagrid" title="学员档案"
-			data-options="border:false,singleSelect:true,collapsible:true,fit:true,url:'jquery-easyui-1.5/demo/datagrid/datagrid_data1.json',method:'get'">
-			<thead>
-				<tr>
-					<th data-options="field:'itemid',width:80,align:'center'">学员姓名</th>
-					<th data-options="field:'productid',width:160,align:'center'">证件类型</th>
-					<th data-options="field:'listprice',width:120,align:'center'">身份证</th>
-					<th data-options="field:'unitcost',width:80,align:'center'">Unit Cost</th>
-					<th data-options="field:'attr1',width:250,align:'center'">Attribute</th>
-					<th data-options="field:'status',width:60,align:'center'">Status</th>
-				</tr>
-			</thead>
-		</table>
 		
 		
 	</div>
-
-
 	<script type="text/javascript">
 	$(function(){
-	// $.ajax({
-	//       url:"http://op.juhe.cn/onebox/weather/query?cityname=%E5%AE%89%E9%98%B3&dtype=&key=0479f84ce021cf657e76e6185adb06c1",
-	//       type:'GET',
-	//       dataType:'JSONP',  // 处理Ajax跨域问题
-	//       success: function(data){
-	//       	var json=data;
-	//       }
-	//   });
+ 
+ 
+$('.menu-li').click(function(event) {
+	/* Act on the event */
+ 	var index=0;
+	index++;
+	var tab = $('#tabcenter').tabs('getSelected');  // get selected panel
+	tab.panel('refresh', 'test.html');
+ 
+ 
+
+
+
+});
+
+
+console.time('time1')
 	var leftWidth=360;
 	var collapseWidth=230;
 	var bodyWidth=$('body').width();
@@ -308,7 +272,7 @@
 	}
 	else{
 	$('.side-a span').show();
-			$('#left-pnl').panel('resize',{	width:leftWidth});
+				$('#left-pnl').panel('resize',{	width:leftWidth});
 	$('#center-pnl').panel('resize',{width:bodyWidth-leftWidth,left:leftWidth});
 	$('.side-a').tooltip('destroy');
 	}
@@ -325,6 +289,7 @@
 	$('.fun-panel').click(function(event) {
 	event.stopPropagation();
 	});
+	console.timeEnd('time1')
 	})
 	</script>
 </body>

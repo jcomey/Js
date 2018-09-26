@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>border,color,实现一个上传按钮</title>
+<style type="text/css">
+.add{
+	display: block;
+	width: 48px;
+	height: 48px;
+	position: relative;
+	color: #ccc;
+	transition: color .25s;
+	border: 1px solid;
+	border-radius: 4px;
+}
+.add:before {
+	content: "";
+	width: 36px;
+	position: absolute;
+	left: 6px;
+	top: 23px;
+	border-top:2px solid;
+}
+.add:after {
+	content: "";
+	height: 36px;
+	position: absolute;;
+	left: 23px;
+	top: 6px;
+	border-left: 2px solid;
+}
+.add:hover {
+	color: #e90000;
+}
+</style>
+</head>
+<body>
+ <script type="text/javascript">
+ 
+console.log(3e3)
+
+ 
+
+ </script>
+<a class="add" href="javascript:;" title="点击上传图片"></a>
+</body>
+</html>
